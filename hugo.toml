@@ -1,0 +1,4 @@
+baseURL = 'https://jeremywojak.com/'
+languageCode = 'en-au'
+title = 'Jeremy Wojak'
+theme = 'ananke'
