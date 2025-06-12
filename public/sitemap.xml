@@ -2,14 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://jeremywojak.com/</loc>
+    <loc>https://jeremywojak.com/posts/first-post/</loc>
     <lastmod>2025-06-11T22:14:29+09:30</lastmod>
   </url><url>
-    <loc>https://jeremywojak.com/posts/hello-world/</loc>
+    <loc>https://jeremywojak.com/projects/first-post/</loc>
+    <lastmod>2025-06-11T22:14:29+09:30</lastmod>
+  </url><url>
+    <loc>https://jeremywojak.com/</loc>
     <lastmod>2025-06-11T22:14:29+09:30</lastmod>
   </url><url>
     <loc>https://jeremywojak.com/posts/</loc>
     <lastmod>2025-06-11T22:14:29+09:30</lastmod>
+  </url><url>
+    <loc>https://jeremywojak.com/projects/</loc>
+    <lastmod>2025-06-11T22:14:29+09:30</lastmod>
+  </url><url>
+    <loc>https://jeremywojak.com/resume/</loc>
+    <lastmod>2024-05-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://jeremywojak.com/blog/</loc>
   </url><url>

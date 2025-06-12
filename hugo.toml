@@ -59,7 +59,7 @@ theme = "hello-friend-ng"
 [[menu.main]]
   identifier = "resume"
   name       = "Resume"
-  url        = "/Resume/"
+  url        = "/resume/"
   
 # Projects menu option
 [[menu.main]]

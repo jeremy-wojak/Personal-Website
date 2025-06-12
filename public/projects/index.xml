@@ -1,21 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Jeremy Wojak</title>
-    <link>https://jeremywojak.com/</link>
-    <description>Recent content on Jeremy Wojak</description>
+    <title>Projects on Jeremy Wojak</title>
+    <link>https://jeremywojak.com/projects/</link>
+    <description>Recent content in Projects on Jeremy Wojak</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
     <lastBuildDate>Wed, 11 Jun 2025 22:14:29 +0930</lastBuildDate>
-    <atom:link href="https://jeremywojak.com/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Coming soon</title>
-      <link>https://jeremywojak.com/posts/first-post/</link>
-      <pubDate>Wed, 11 Jun 2025 22:14:29 +0930</pubDate>
-      <guid>https://jeremywojak.com/posts/first-post/</guid>
-      <description>&lt;p&gt;Stayed tuned for blogs about my projects and tutorials on any findings!&lt;/p&gt;</description>
-    </item>
+    <atom:link href="https://jeremywojak.com/projects/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Coming soon</title>
       <link>https://jeremywojak.com/projects/first-post/</link>
