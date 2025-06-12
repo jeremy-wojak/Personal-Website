@@ -1,7 +1,6 @@
 baseURL = 'https://jeremywojak.com/'
 languageCode = 'en-au'
 title = 'Jeremy Wojak'
-theme = "hello-friend-ng"
 
 [params]
   dateform        = "Jan 2, 2006"
@@ -72,3 +71,7 @@ theme = "hello-friend-ng"
   identifier = "blog"
   name       = "Blog"
   url        = "/posts"
+
+[module]
+  [[module.imports]]
+    path = "github.com/rhazdon/hugo-theme-hello-friend-ng"
