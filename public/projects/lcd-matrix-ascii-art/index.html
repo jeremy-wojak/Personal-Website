@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+        <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="author" content="">
+<meta name="description" content="A while ago, I embarked on a personal project that combined my love for electronics and creative coding: building a large-scale display matrix out of 96 individual character LCD screens. The result was a massive 8x12 grid capable of displaying text, but I quickly realised I wanted to show more than just words—I wanted to display images.
+The challenge? These are text-only displays. You can&rsquo;t just send them a JPEG. My solution was to go retro and use a classic form of digital art: ASCII art.
+" />
+<meta name="keywords" content="homepage, blog, Python, Electronics, Raspberry Pi" />
+<meta name="robots" content="noodp" />
+<meta name="theme-color" content="" />
+<link rel="canonical" href="http://localhost:1313/projects/lcd-matrix-ascii-art/" />
+
+
+    <title>
+        
+            Image to ASCII for 16x2 Character Display Matrix :: Jeremy Wojak 
+        
+    </title>
+
+
+
+
+
+  <link rel="stylesheet" href="/main.min.07ea7ac7da67e2e153a7dfa2457bc6a19cca824288d175e223fadc579041bc51.css" integrity="sha256-B&#43;p6x9pn4uFTp9&#43;iRXvGoZzKgkKI0XXiI/rcV5BBvFE=" crossorigin="anonymous">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="msapplication-TileColor" content="">
+
+
+
+  <meta itemprop="name" content="Image to ASCII for 16x2 Character Display Matrix">
+  <meta itemprop="description" content="A while ago, I embarked on a personal project that combined my love for electronics and creative coding: building a large-scale display matrix out of 96 individual character LCD screens. The result was a massive 8x12 grid capable of displaying text, but I quickly realised I wanted to show more than just words—I wanted to display images.
+The challenge? These are text-only displays. You can’t just send them a JPEG. My solution was to go retro and use a classic form of digital art: ASCII art.">
+  <meta itemprop="datePublished" content="2025-07-13T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-07-13T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1176">
+  <meta itemprop="image" content="http://localhost:1313/">
+  <meta itemprop="keywords" content="Python,Electronics,Raspberry Pi">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/">
+  <meta name="twitter:title" content="Image to ASCII for 16x2 Character Display Matrix">
+  <meta name="twitter:description" content="A while ago, I embarked on a personal project that combined my love for electronics and creative coding: building a large-scale display matrix out of 96 individual character LCD screens. The result was a massive 8x12 grid capable of displaying text, but I quickly realised I wanted to show more than just words—I wanted to display images.
+The challenge? These are text-only displays. You can’t just send them a JPEG. My solution was to go retro and use a classic form of digital art: ASCII art.">
+
+
+
+    <meta property="og:url" content="http://localhost:1313/projects/lcd-matrix-ascii-art/">
+  <meta property="og:site_name" content="Jeremy Wojak">
+  <meta property="og:title" content="Image to ASCII for 16x2 Character Display Matrix">
+  <meta property="og:description" content="A while ago, I embarked on a personal project that combined my love for electronics and creative coding: building a large-scale display matrix out of 96 individual character LCD screens. The result was a massive 8x12 grid capable of displaying text, but I quickly realised I wanted to show more than just words—I wanted to display images.
+The challenge? These are text-only displays. You can’t just send them a JPEG. My solution was to go retro and use a classic form of digital art: ASCII art.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-07-13T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-13T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Electronics">
+    <meta property="article:tag" content="Raspberry Pi">
+    <meta property="og:image" content="http://localhost:1313/">
+
+
+
+
+
+
+    <meta property="article:published_time" content="2025-07-13 00:00:00 &#43;0000 UTC" />
+
+
+
+
+
+
+
+
+
+
+
+
+    </head>
+
+    
+        <body>
+    
+    
+        <div class="container">
+            <header class="header">
+    <span class="header__inner">
+        <a href="/" style="text-decoration: none;">
+    <div class="logo">
+        
+            <span class="logo__mark">></span>
+            <span class="logo__text ">
+                Jeremy Wojak</span>
+            <span class="logo__cursor" style=
+                  "
+                   
+                   ">
+            </span>
+        
+    </div>
+</a>
+
+
+        <span class="header__right">
+                <nav class="menu">
+    <ul class="menu__inner"><li><a href="/about_me/"></a></li><li><a href="/about_me/">About Me</a></li><li><a href="/posts">Blog</a></li><li><a href="/projects/">Projects</a></li>
+        <ul class="submenu">
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">en</a>
+                <div class="dropdown-content">
+                </div>
+            </li>
+        </ul>
+    </ul>
+</nav>
+
+                <span class="menu-trigger">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+                    </svg>
+                </span>
+        </span>
+    </span>
+</header>
+
+
+            <div class="content">
+                
+    <main class="post">
+
+        <div class="post-info">
+            
+            </p>
+        </div>
+
+        <article>
+            <h2 class="post-title"><a href="http://localhost:1313/projects/lcd-matrix-ascii-art/">Image to ASCII for 16x2 Character Display Matrix</a></h2>
+
+            
+            
+            
+
+            <div class="post-content">
+                <p>A while ago, I embarked on a personal project that combined my love for electronics and creative coding: building a large-scale display matrix out of 96 individual character LCD screens. The result was a massive 8x12 grid capable of displaying text, but I quickly realised I wanted to show more than just words—I wanted to display images.</p>
+<p>The challenge? These are text-only displays. You can&rsquo;t just send them a JPEG. My solution was to go retro and use a classic form of digital art: <strong>ASCII art</strong>.</p>
+<p>This blog post details my journey in developing a system to convert any image into beautiful, computationally efficient ASCII art, specifically designed to run on low-powered hardware like a Raspberry Pi.</p>
+<p><figure style="text-align: center;">
+    <img src="/project-images/lcd.jpg" alt="8x12 LCD matrix that I built and used for this project" style="display: block; margin-left: auto; margin-right: auto;"><figcaption style="font-size: 0.9rem; font-style: italic; color: #999999; margin-top: 0.5rem;">
+        8x12 LCD matrix that I built and used for this project
+      </figcaption></figure></p>
+<p>I will be making another post explaining how this project got started and how I got the hardware and firmware working for this.</p>
+<h3 id="the-challenge-images-on-a-text-only-screen">The Challenge: Images on a Text-Only Screen</h3>
+<p>Character displays are simple, affordable, and easy to control with a microcontroller or a Single Board Computer (SBC). However, their limitation is that they only understand characters. To display a picture, I needed to &ldquo;translate&rdquo; image data into a grid of ASCII characters.</p>
+<p>My primary goals for this project were:</p>
+<ol>
+<li><strong>Design an efficient conversion system</strong> that could handle various image formats.</li>
+<li><strong>Evaluate different conversion methods</strong> to see what produced the best-looking results.</li>
+<li><strong>Optimise it for speed</strong>, with a target of running in under a second on a Raspberry Pi.</li>
+<li><strong>Successfully display the art</strong> on my custom-built LCD matrix.</li>
+</ol>
+<h3 id="the-two-faces-of-ascii-art-tone-vs-structure">The Two Faces of ASCII Art: Tone vs. Structure</h3>
+<p>After some research, I found that ASCII art generation generally follows two main approaches:</p>
+<ul>
+<li><strong>Tone-Based:</strong> This method focuses on the brightness or &ldquo;tone&rdquo; of different parts of an image. Dark areas are replaced with dense, dark characters (like <code>@</code>, <code>#</code>, or <code>$</code>), while bright areas get sparse characters (like <code>.</code>, <code>'</code>, or just a space). It’s like painting with characters.</li>
+<li><strong>Structure-Based:</strong> This approach focuses on finding the edges and contours of an image. It uses characters that mimic lines and curves (<code>/</code>, <code>\</code>, <code>|</code>, <code>_</code>) to outline the shapes in the picture.</li>
+</ul>
+<p>My plan was to implement and test both methods to see which was better suited for my display.</p>
+<h3 id="developing-the-conversion-algorithms">Developing the Conversion Algorithms</h3>
+<p>The entire process was written in Python, using the powerful OpenCV library for image processing. The conversion process was broken down into three main stages: Image Sizing, Processing, and Character Selection.</p>
+<h4 id="1-sizing-the-image">1. Sizing the Image</h4>
+<p>First, any input image had to be resized to match the resolution of my display (which, after some tweaking for aspect ratio, was effectively 640x360 pixels). I created two options: one that crops the image and one that adds blank space to prevent distortion, similar to the &ldquo;letterboxing&rdquo; you see on TVs.</p>
+<h4 id="2-processing-the-image">2. Processing the Image</h4>
+<p>This is where the two approaches diverge.</p>
+<ul>
+<li>For the <strong>tone-based</strong> method, the process was simple: just convert the image to greyscale.</li>
+<li>For the <strong>structure-based</strong> method, I needed to detect edges. I used the Canny edge detection algorithm, a feature well-supported in OpenCV. This method is great at identifying sharp changes in intensity, effectively outlining the features in an image and producing a clean, black-and-white result of just the lines.</li>
+</ul>
+<h4 id="3-choosing-the-characters">3. Choosing the Characters</h4>
+<p>This was the most critical step. I created four different methods to see what worked best:</p>
+<ol>
+<li><strong>Average Luminance (Tone-Based):</strong> This was my fastest method. It divides the image into small sections (one for each character on the final display) and calculates the average brightness of each section. It then maps that brightness value to a character from a predefined list, from darkest to brightest (<code>@%#*+=-:. </code>).</li>
+<li><strong>Structure-Based (Large Character Set):</strong> This method compares each section of the processed edge-detected image directly against <em>every single character</em> available on the LCD screen (64 of them). It picks the character that has the most pixel-for-pixel overlap. While thorough, it&rsquo;s incredibly inefficient.</li>
+<li><strong>Structure-Based (Small Character Set):</strong> To optimise the above, I analysed which characters were chosen most frequently from a huge random dataset. It turned out only a handful of characters did most of the work. I created a much smaller, curated list of the 16 most effective characters (<code>$#%&amp;gd()*|_-.=</code>). This dramatically reduced the number of comparisons needed.</li>
+<li><strong>Machine Learning Model (An Experiment):</strong> I also experimented with training a Random Forest machine learning model to predict the best character. While a fun idea, the models were either too inaccurate or too large and slow to run on a Raspberry Pi. This approach was ultimately a dead end for this project.</li>
+</ol>
+<h3 id="putting-the-art-to-the-test">Putting the Art to the Test</h3>
+<p>To figure out which method produced the &ldquo;best&rdquo; art, I couldn&rsquo;t just rely on my own eyes. I needed data.
+First, I ran a survey with 50 respondents, showing them the output of each method for five different test images and asking them to choose the best one.</p>
+<p><div style="text-align: center;"><em>Here are the 5 test images chosen for the survey.</em></div>
+<style>
+    .image-gallery {overflow: auto; margin-left: -1%!important;}
+    .image-gallery li {float: left; display: block; margin: 0 0 1% 1%; width: 19%;}
+    .image-gallery li a {text-align: center; text-decoration: none!important; color: #777;}
+    .image-gallery li a span {display: block; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; padding: 3px 0;}
+    .image-gallery li a img {width: 100%; display: block;}
+</style>
+
+
+<ul class="image-gallery">
+<li>
+      <a href="http://localhost:1313/project-images/lcd-gallery/banana_hu_4cff2078eb9ba7ef.png" title="banana" class="lightbox-image">
+        <img src="http://localhost:1313/project-images/lcd-gallery/banana_hu_149f10396de05d63.png" alt="banana" title="banana">
+        <span>banana</span>
+      </a>
+    </li>
+  
+<li>
+      <a href="http://localhost:1313/project-images/lcd-gallery/circle_hu_73f3d2f238c4767.jpg" title="circle" class="lightbox-image">
+        <img src="http://localhost:1313/project-images/lcd-gallery/circle_hu_60a05f891e45712c.jpg" alt="circle" title="circle">
+        <span>circle</span>
+      </a>
+    </li>
+  
+<li>
+      <a href="http://localhost:1313/project-images/lcd-gallery/duck_hu_de0455f145cb857a.png" title="duck" class="lightbox-image">
+        <img src="http://localhost:1313/project-images/lcd-gallery/duck_hu_b996526076fee9cc.png" alt="duck" title="duck">
+        <span>duck</span>
+      </a>
+    </li>
+  
+<li>
+      <a href="http://localhost:1313/project-images/lcd-gallery/lane_hu_766ea8205303cb46.jpg" title="lane" class="lightbox-image">
+        <img src="http://localhost:1313/project-images/lcd-gallery/lane_hu_6779ed6625db94f3.jpg" alt="lane" title="lane">
+        <span>lane</span>
+      </a>
+    </li>
+  
+<li>
+      <a href="http://localhost:1313/project-images/lcd-gallery/lenna_hu_f4f95b12ceaafe78.png" title="lenna" class="lightbox-image">
+        <img src="http://localhost:1313/project-images/lcd-gallery/lenna_hu_c009e95f106c6b0b.png" alt="lenna" title="lenna">
+        <span>lenna</span>
+      </a>
+    </li>
+  
+
+</ul>   </p>
+<p>The results were overwhelming:</p>
+<ul>
+<li>The <strong>Average Luminance</strong> method was the clear favourite, chosen <strong>62% of the time</strong>. It proved to be the most versatile and consistently produced pleasing results.</li>
+<li>The structure-based methods that relied on Canny edge detection were the least popular, collectively chosen only 12% of the time. The edge detection, while good in theory, often created results that were too sparse or missed important details.</li>
+</ul>
+<p>However, the survey also showed that the &ldquo;best&rdquo; method could depend on the image. For the simple &ldquo;circle&rdquo; image, the structure-based method was the clear winner because the image is <em>all</em> structure. For more complex photographic images like &ldquo;Lenna&rdquo; or the &ldquo;lane&rdquo;, the nuance of the tone-based approach was heavily preferred.</p>
+<p><figure style="text-align: center;">
+    <img src="/project-images/car_onscreen.jpg" alt="LCD matrix output of the car image using the popular average luminance method" style="display: block; margin-left: auto; margin-right: auto;"><figcaption style="font-size: 0.9rem; font-style: italic; color: #999999; margin-top: 0.5rem;">
+        LCD matrix output of the car image using the popular average luminance method
+      </figcaption></figure></p>
+<h3 id="performance-can-it-run-in-real-time">Performance: Can it Run in Real-Time?</h3>
+<p>The final test was speed. Running the code on an Intel Core i5 PC, every method completed in under a second. But the real test was on the SBCs.</p>
+<ul>
+<li><strong>Raspberry Pi 3B:</strong> The fast Average Luminance method took about <strong>0.6 seconds</strong>. The large structure-based method took a sluggish <strong>17 seconds</strong>, but the optimised small structure-based method was a more respectable <strong>3.5 seconds</strong>.</li>
+<li><strong>OKdo Rock 4C+ (a more powerful SBC):</strong> The Average Luminance method was even faster here, at just <strong>0.14 seconds</strong>. This is quick enough for potential real-time video conversion at around 7 frames per second (Which is close to the refresh speed of the character displays)!</li>
+</ul>
+<p><figure style="text-align: center;">
+    <img src="/project-images/EachMethodSpeed.png" alt="Comparison of ASCII conversion results for the PC, Raspberry Pi 3B and OKdo Rock 4C&#43;" style="display: block; margin-left: auto; margin-right: auto;"><figcaption style="font-size: 0.9rem; font-style: italic; color: #999999; margin-top: 0.5rem;">
+        Comparison of ASCII conversion results for the PC, Raspberry Pi 3B and OKdo Rock 4C+
+      </figcaption></figure></p>
+<h3 id="conclusion">Conclusion</h3>
+<p>This project was a fantastic journey into the practicalities of image processing on resource-constrained hardware. I successfully created a system that can generate visually appealing ASCII art and display it on a unique, custom-built screen.</p>
+<p>The key takeaway was that while complex approaches like structure detection and machine learning are powerful, sometimes a simpler, more elegant solution like the <strong>average luminance method</strong> provides the best balance of speed, efficiency, and quality. It proved to be a robust and versatile technique that brought my giant LCD matrix to life.</p>
+
+            </div>
+        </article>
+
+        <hr />
+
+        <div class="post-info">
+            
+    <p>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg>
+
+        <span class="tag"><a href="http://localhost:1313/tags/python/">Python</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/electronics/">Electronics</a></span>
+        <span class="tag"><a href="http://localhost:1313/tags/raspberry-pi/">Raspberry Pi</a></span>
+        
+    </p>
+
+            
+  		</div>
+    </main>
+
+            </div>
+
+            
+                <footer class="footer">
+    
+    
+</footer>
+
+            
+        </div>
+
+        
+
+
+
+<script type="text/javascript" src="/bundle.min.ad54ad97364f77ede35def9096b162bb1f0b3973aa50b080f5e82fa147f6882e2a7200d7535adbf9b51bebf939f1c1ca9bbe6be87530092aca720eac4a226fda.js" integrity="sha512-rVStlzZPd&#43;3jXe&#43;QlrFiux8LOXOqULCA9egvoUf2iC4qcgDXU1rb&#43;bUb6/k58cHKm75r6HUwCSrKcg6sSiJv2g=="></script>
+
+
+
+
+    </body>
+</html>

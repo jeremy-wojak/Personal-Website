@@ -1,0 +1,32 @@
+{{- /* Get the image path from the markdown link's destination field */ -}}
+{{- $path := .Destination -}}
+
+{{- /* Attempt to get the image as a resource from the /assets folder */ -}}
+{{- $image := resources.Get $path -}}
+
+{{- /*
+  Use a "with" block. This is the most important part.
+  It checks if $image was successfully found (is not nil).
+  If it was found, the code inside the block runs.
+  If it was not found, the code is skipped, preventing the "nil pointer" error.
+*/ -}}
+{{- with $image -}}
+  {{- /*
+    Inside this 'with' block, the dot (.) now refers to the image resource itself.
+    The original context (like the alt text) is now available via the dollar sign ($).
+  */ -}}
+  <figure style="text-align: center;">
+    <img src="{{ .RelPermalink }}" alt="{{ $.Text }}" style="display: block; margin-left: auto; margin-right: auto;">
+    {{- with $.Text -}}
+      <figcaption style="font-size: 0.9rem; font-style: italic; color: #999999; margin-top: 0.5rem;">
+        {{ . }}
+      </figcaption>
+    {{- end -}}
+  </figure>
+{{- else -}}
+  {{- /*
+    This is an optional but very helpful error message for you.
+    If Hugo can't find the image, it will print this instead of crashing.
+  */ -}}
+  <p style="color: red; font-weight: bold;">[Error: Image render hook could not find '/assets/{{ $path }}']</p>
+{{- end -}}
