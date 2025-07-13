@@ -54,11 +54,11 @@ title = 'Jeremy Wojak'
     # path = "/img/your-example-logo.svg"
     # alt = "Your example logo alt text"
 
-# Resume menu option
+# About Me menu option
 [[menu.main]]
-  identifier = "resume"
-  name       = "Resume"
-  url        = "/resume/"
+  identifier = "About_Me"
+  name       = "About Me"
+  url        = "/About_Me/"
   
 # Projects menu option
 [[menu.main]]

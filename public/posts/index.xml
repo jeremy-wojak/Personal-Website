@@ -1,20 +1,20 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Posts on Jeremy Wojak</title>
-        <link>https://jeremywojak.com/posts/</link>
+        <link>http://localhost:1313/posts/</link>
         <description>Recent content in Posts on Jeremy Wojak</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
         <lastBuildDate>Wed, 11 Jun 2025 22:14:29 +0930</lastBuildDate>
-        <atom:link href="https://jeremywojak.com/posts/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
         
         <item>
             <title>Coming soon</title>
-            <link>https://jeremywojak.com/posts/first-post/</link>
+            <link>http://localhost:1313/posts/first-post/</link>
             <pubDate>Wed, 11 Jun 2025 22:14:29 +0930</pubDate>
             
-            <guid>https://jeremywojak.com/posts/first-post/</guid>
+            <guid>http://localhost:1313/posts/first-post/</guid>
             <description>&lt;p&gt;Stayed tuned for blogs about my projects and tutorials on any findings!&lt;/p&gt;</description>
             <content type="html"><![CDATA[<p>Stayed tuned for blogs about my projects and tutorials on any findings!</p>
 ]]></content>
