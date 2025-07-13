@@ -1,9 +1,7 @@
----
-title: "Image to ASCII for 16x2 Character Display Matrix"
-date: 2025-07-14
-draft: false
-tags: ["Python", "Electronics", "Raspberry Pi"]
----
++++
+date = '2025-07-14T00:29:09+09:30'
+title = 'Image to ASCII for 16x2 Character Display Matrix'
++++
 
 A while ago, I embarked on a personal project that combined my love for electronics and creative coding: building a large-scale display matrix out of 96 individual character LCD screens. The result was a massive 8x12 grid capable of displaying text, but I quickly realised I wanted to show more than just words—I wanted to display images.
 

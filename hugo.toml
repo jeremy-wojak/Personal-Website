@@ -54,12 +54,6 @@ title = 'Jeremy Wojak'
     # path = "/img/your-example-logo.svg"
     # alt = "Your example logo alt text"
 
-# About Me menu option
-[[menu.main]]
-  identifier = "About_Me"
-  name       = "About Me"
-  url        = "/About_Me/"
-  
 # Projects menu option
 [[menu.main]]
   identifier = "projects"
@@ -71,6 +65,12 @@ title = 'Jeremy Wojak'
   identifier = "blog"
   name       = "Blog"
   url        = "/posts"
+
+# About Me menu option
+[[menu.main]]
+  identifier = "About_Me"
+  name       = "About Me"
+  url        = "/about_me/"
 
 [module]
   [[module.imports]]

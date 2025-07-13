@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Projects on Jeremy Wojak</title>
+    <title>My Projects on Jeremy Wojak</title>
     <link>http://localhost:1313/projects/</link>
-    <description>Recent content in Projects on Jeremy Wojak</description>
+    <description>Recent content in My Projects on Jeremy Wojak</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Wed, 11 Jun 2025 22:14:29 +0930</lastBuildDate>
+    <lastBuildDate>Mon, 14 Jul 2025 00:29:09 +0930</lastBuildDate>
     <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Image to ASCII for 16x2 Character Display Matrix</title>
+      <link>http://localhost:1313/projects/image_to_ascii/</link>
+      <pubDate>Mon, 14 Jul 2025 00:29:09 +0930</pubDate>
+      <guid>http://localhost:1313/projects/image_to_ascii/</guid>
+      <description>&lt;p&gt;A while ago, I embarked on a personal project that combined my love for electronics and creative coding: building a large-scale display matrix out of 96 individual character LCD screens. The result was a massive 8x12 grid capable of displaying text, but I quickly realised I wanted to show more than just words—I wanted to display images.&lt;/p&gt;&#xA;&lt;p&gt;The challenge? These are text-only displays. You can&amp;rsquo;t just send them a JPEG. My solution was to go retro and use a classic form of digital art: &lt;strong&gt;ASCII art&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Coming soon</title>
       <link>http://localhost:1313/projects/first-post/</link>
